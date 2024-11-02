@@ -27,7 +27,7 @@ import photoProfile from "../../assets/photoprofile.jpg";
 export default function Main() {
   const downloadButtonRef = useRef();
   const [contact] = useState({
-    phone: "+55 (19) 99394-8696",
+    phone: "+55 (19) 99384-8696",
     email: "mauromendonca.2007@gmail.com",
     linkedin: "www.linkedin.com/in/mauromendonca2007",
     github: "",
@@ -187,7 +187,7 @@ export default function Main() {
               </S.ContentTitle>
               {contact.phone && (
                 <S.ItemContact>
-                  <a href="https://whatsa.me/5519993948696/?t=Ol%C3%A1%20tudo%20bem!">
+                  <a href="https://whatsa.me/5519993848696/?t=Ol%C3%A1%20tudo%20bem!">
                     <FaWhatsappSquare style={{ color: "#00a884" }} />
                     {contact.phone}
                   </a>
