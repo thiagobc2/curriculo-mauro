@@ -187,7 +187,7 @@ export default function Main() {
               </S.ContentTitle>
               {contact.phone && (
                 <S.ItemContact>
-                  <a href="https://whatsa.me/5568981087475/?t=Ol%C3%A1%20tudo%20bem!">
+                  <a href="https://whatsa.me/5519993948696/?t=Ol%C3%A1%20tudo%20bem!">
                     <FaWhatsappSquare style={{ color: "#00a884" }} />
                     {contact.phone}
                   </a>
