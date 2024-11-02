@@ -32,11 +32,23 @@ export const Position = styled.div`
 export const Ecosystem = styled.p`
   color: #222;
   font-size: 12px;
-  letter-spacing: 1px;
   margin-bottom: 10px;
+  text-transform: uppercase;
 `;
 export const Description = styled.div`
   font-size: 14px;
   text-align: justify;
   margin-bottom: 30px;
+`;
+
+export const ContentItems = styled.div`
+  margin-top: -20px;
+  margin-bottom: 30px;
+`;
+
+export const Item = styled.li`
+  font-size: 14px;
+  margin-left: 40px;
+  text-align: justify;
+  margin-bottom: 10px;
 `;

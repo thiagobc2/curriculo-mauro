@@ -82,6 +82,7 @@ export const Position = styled.div`
   color: #fff;
   font-size: 14px;
   margin-bottom: 20px;
+  text-align: center;
 `;
 
 export const ContentContactMeAboutMe = styled.div`
@@ -102,6 +103,11 @@ export const ItemContact = styled.div`
   font-size: 20px;
   gap: 10px;
   margin-bottom: 8px;
+  word-wrap: break-word;
+
+  @media (max-width: 541px) {
+    font-size: 14px;
+  }
   svg {
     font-size: 30px;
   }

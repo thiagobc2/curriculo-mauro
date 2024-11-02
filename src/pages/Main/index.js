@@ -14,6 +14,7 @@ import {
   FaWhatsappSquare,
   FaDownload,
 } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 import * as S from "./style";
 import ItemJob from "../../components/ItemJob";
@@ -21,135 +22,108 @@ import ItemEducation from "../../components/ItemEducation";
 import ListMakers from "../../components/ListMakers";
 import ListRating from "../../components/ListRating";
 
-import photoProfile from "../../assets/photoprofile.jpeg";
+import photoProfile from "../../assets/photoprofile.jpg";
 
 export default function Main() {
   const downloadButtonRef = useRef();
   const [contact] = useState({
-    phone: "+55 (68) 981087475",
-    linkedin: "www.linkedin.com/in/thiagobc2",
-    github: "github.com/thiagobc2",
+    phone: "+55 (19) 99394-8696",
+    email: "mauromendonca.2007@gmail.com",
+    linkedin: "www.linkedin.com/in/mauromendonca2007",
+    github: "",
   });
 
-  const [languages] = useState(["PORTUGUÊS", "ESPANHOL"]);
+  const [languages] = useState(["PORTUGUÊS", "INGLÊS", "ESPANHOL"]);
   const [hobies] = useState([
-    "CURTIR FAMÍLIA",
-    "LER LIVROS",
-    "VIAJAR",
-    "JOGAR BOLA",
+    "Casado, pai de dois filhos. Membro ativo da Igreja Batista, com interesse por esportes como basquete e futebol, leitura e música",
   ]);
   const [jobs] = useState([
     {
       id: 1,
-      company: "GFT (BRADESCO)",
-      period: "2024",
-      position: "Desenvolvedor Front-End Sênior",
-      ecosystem: "ANGULAR | REACTJS | NEXTJS | TYPESCRIPT | TESTE | SCRUM",
+      company: "VULKAN DO BRASIL LTDA.",
+      period: "2010 - 2024",
+      position: "Gestor Geral de Vendas - América Latina",
+      ecosystem:
+        "Empresa de origem Alemã de médio porte, fabricante de pecas para refrigeração, ar- condicionado, mineração, oil & gas e naval.",
       description:
-        "Contribuí para a melhoria da experiência de outros desenvolvedores ao criar componentes reutilizáveis em diversos frameworks JavaScript, facilmente adaptáveis a diferentes temas. Essa abordagem não apenas aumentou significativamente a performance da equipe, mas também facilitou a integração e a colaboração, graças a documentações simples e claras.",
+        "Responsável pela gestão de uma carteira de R$30 milhões no segmento de refrigeração, linha branca e ar condicionado. Liderança de equipe de 8 pessoas na América do Sul. ",
+      items: [
+        "Crescimento superior a 15% ao ano no core business, anéis Lokring para linha branca, com atuação em clientes como Whirlpool, Electrolux, Samsung, LG, Midea, Panasonic entre outros.",
+        "Introdução de produtos em serviços de pós-vendas nas principais redes autorizadas (Brastemp, Samsung, Panasonic, Daikin, LG, Valeo).",
+        "Sucesso na consolidação de negócios com fornecedores asiáticos e americanos para o mercado nacional, liderando em diversos segmentos de acessórios e ferramentas de serviços de refrigeração e ar-condicionado.",
+      ],
     },
     {
       id: 2,
-      company: "SIS INNOV & Tech (BRADESCO)",
-      period: "2023 - 2024",
-      position: "Desenvolvedor Front-End Sênior",
-      ecosystem: "ANGULAR | REACTJS | NEXTJS | TYPESCRIPT | TESTE | SCRUM",
+      company: "TOYOTA MATERIAL HANDLING, BRASIL",
+      period: "2007 - 2009",
+      position: "Gerente de Vendas e Administração – América Latina",
+      ecosystem:
+        "Empresa de origem Japonesa de grande porte do segmento automotivo e fabricante de empilhadeiras industriais.",
       description:
-        "Contribuí para a melhoria da experiência de outros desenvolvedores ao criar componentes reutilizáveis em diversos frameworks JavaScript, facilmente adaptáveis a diferentes temas. Essa abordagem não apenas aumentou significativamente a performance da equipe, mas também facilitou a integração e a colaboração, graças a documentações simples e claras.",
+        "Gestão comercial e pós-vendas com equipe de 30 profissionais e carteira de R$20 milhões anuais no segmento de empilhadeiras industriais.",
+      items: [
+        "Reestruturação da filial segundo padrões Toyota, conquistando novos clientes como GM, Honda e Lojas CEM.",
+        "Implementação de processos de melhoria contínua, certificada pela sede no Japão.",
+      ],
     },
     {
       id: 3,
-      company: "ICON IT (SYNVIA)",
-      period: "2022 - 2023",
-      position: "Desenvolvedor Front-End Sênior",
-      ecosystem:
-        "REACTJS | NEXTJS | TYPESCRIPT | TESTE | SCRUM | GIT | AZURE | ASANA | DOCKER",
+      company: "VISANET (ATUAL CIELO), BRASIL",
+      period: "2005 - 2007",
+      position: "Gerente de Administração e Comércio Exterior",
+      ecosystem: "",
       description:
-        "Contribuí na arquitetura front-end inicial do projeto, implementando padrões de nomenclatura consistentes e utilizando técnicas sofisticadas de desenvolvimento. Minha atuação garantiu uma base sólida e escalável, facilitando a manutenção e a evolução do sistema ao longo do tempo. Além disso, promovi a adoção de melhores práticas, como modularização de código e design responsivo, o que resultou em uma experiência de usuário otimizada e uma integração mais eficiente entre as equipes.",
+        "Gestão da filial de Campinas, com foco em transações financeiras B2B e comércio exterior.",
+      items: [
+        "Crescimento do faturamento, levando a filial de 8o para 4o lugar em nível nacional em menos de 2 anos.",
+      ],
     },
     {
       id: 4,
-      company: "PASQUALI SOLUTIONS (ELOFY/ZUCCHETI)",
-      period: "2021 - 2022",
-      position: "Desenvolvedor Front-End Sênior",
+      company: "TECUMSEH DO BRASIL LTDA.",
+      period: "1994 - 2005",
+      position: "Gerente de Vendas – América Latina",
       ecosystem:
-        "ANGULARJS | REACTJS | NEXTJS | TYPESCRIPT | TESTE | SCRUM | GITFLOW | BITBUCKET | JIRA | DOCKER ",
+        "Empresa de origem Americana de grande porte, fabricante de compressores herméticos para refrigeração e ar-condicionado.",
       description:
-        "Participei ativamente da transição de código legado de AngularJS para React, modernizando a base de código e melhorando a manutenibilidade do projeto. Contribuí na codificação de novas telas, o que proporcionou uma experiência mais intuitiva e agradável para os clientes. Essa mudança não apenas aumentou a performance das aplicações, mas também facilitou a integração de novas funcionalidades, alinhando o produto às expectativas atuais do mercado",
-    },
-    {
-      id: 5,
-      company: "INCICLE",
-      period: "2020 - 2020",
-      position: "Desenvolvedor Front-End Pleno",
-      ecosystem:
-        "REACTJS | REACT-NATIVE | TYPESCRIPT | TESTE | SCRUM | GITFLOW | SCRUM",
-      description:
-        "Participei do nascimento de um projeto, onde fui responsável pela construção de toda a arquitetura front-end. Desenvolvi os entry points essenciais para a integração eficaz com o backend, garantindo uma comunicação fluida entre as camadas do sistema. Além disso, configurei ferramentas de documentação que facilitaram o onboarding da equipe e melhoraram a transparência do processo de desenvolvimento. Essa abordagem não apenas otimizou o fluxo de trabalho, mas também assegurou que as melhores práticas fossem seguidas desde o início do projeto",
-    },
-    {
-      id: 6,
-      company: "M & B MARQUES E BARBOSA (SECRETARIA DE ESTADO E MEIO AMBIENTE)",
-      period: "2015 - 2019",
-      position: "Desenvolvedor Full-Stack",
-      ecosystem:
-        "ANGULARJS | WEB2PY | PYTHON | JAVASCRIPT | JQUERY | POSTGRES SQL | GIT | VIRTUAL BOX | VAGRANT",
-      description:
-        "Fui responsável por gerenciar toda a esteira de desenvolvimento de um software, cuidando de sua arquitetura, backend e frontend de forma independente. Contribuí para a criação de um sistema de fácil interação, que facilitou o trabalho dos funcionários ao alimentar informações de campo. Implementei um formulário digital que sincronizava com o banco de dados sempre que havia conexão com a internet, promovendo robustez e praticidade no processo de captação e lançamento de dados. Essa solução proporcionou uma economia considerável para a secretaria, reduzindo o tempo gasto em idas a campo e na inserção de informações",
-    },
-    {
-      id: 7,
-      company: "FREELANCER",
-      period: "2010 - 2015",
-      position: "Desenvolvedor e Técnico de Informática",
-      ecosystem: "HTML | PHP | JAVASCRIPT | CSS | MYSQL",
-      description:
-        "Durante meu período como freelancer, trabalhei no desenvolvimento de sites personalizados e na manutenção de computadores a domicílio. Criei soluções online que atendiam às necessidades específicas de meus clientes, proporcionando uma presença digital eficaz e atraente. Além disso, realizei serviços de suporte técnico, resolvendo problemas de hardware e software diretamente nas residências dos usuários. Essa experiência não apenas aprimorou minhas habilidades técnicas, mas também fortaleceu minha capacidade de comunicação e atendimento ao cliente, garantindo satisfação e fidelização.",
-    },
-    {
-      id: 8,
-      company: "VISA TERCEIRIZAÇÃO (POLICIA FEDERAL)",
-      period: "2009 - 2010",
-      position: "Setor de Informática",
-      ecosystem: "HTML | PHP | JAVASCRIPT | CSS | MYSQL",
-      description:
-        "Durante meu tempo na Polícia Federal, gerenciei o setor de informática, onde fui responsável pelo desenvolvimento de sistemas em PHP que atendiam às necessidades operacionais da instituição. Além de liderar a criação e implementação dessas soluções, administrei a rede e cuidei de toda a infraestrutura de TI, garantindo a segurança e a eficiência dos sistemas. Essa experiência me permitiu aprimorar minhas habilidades em gerenciamento de projetos e infraestrutura, além de contribuir para a otimização dos processos internos e a melhoria na prestação de serviços da Polícia Federal.",
+        "Responsável por uma equipe de 10 colaboradores e uma carteira de R$100 milhões anuais em vendas de compressores herméticos para grandes clientes da América Latina.",
+      items: [
+        "Alcançou liderança de mercado no segmento de compressores para linha branca e refrigeração comercial.",
+        "Sucesso na abertura de novos negócios com grandes players como Whirlpool, Electrolux, Midea Carrier e Bosch.",
+      ],
     },
   ]);
   const [educations] = useState([
     {
       id: 1,
-      university: "UNIVERSIDADE FEDERAL DO ACRE",
-      course: "PÓS GRADUAÇÃO EM TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO",
-      period: "2016 - 2017",
+      university: "FG - FUNDAÇÃO GETÚLIO VARGAS",
+      course: "MBA em Estratégias de Marketing",
+      period: "2008",
     },
     {
       id: 2,
-      university: "UNIVERSIDADE DO SUL DE SANTA CATARINA",
-      course: "TECNÓLOGO EM WEB DESIGN E PROGRAMAÇÃO",
-      period: "2009 - 2012",
+      university: "FDC - FUNDAÇÃO DOM CABRAL",
+      course: "Mestrado em Gestão de Pessoas",
+      period: "2005",
+    },
+    {
+      id: 3,
+      university: "USP - UNIVERSIDADE DE SÃO PAULO",
+      course: "Engenharia Mecânica",
+      period: "1994",
     },
   ]);
   const [ecosystems] = useState([
     {
       id: 1,
-      name: "ReacJs",
+      name: "Gestão de CRM, P&L, CAPEX, COMEX",
       rating: 4,
     },
     {
       id: 2,
-      name: "NextJs",
+      name: "Normas de Qualidade ISO, 5S, Kanban, Lean Manufacturing",
       rating: 4,
-    },
-    {
-      id: 3,
-      name: "Typescript",
-      rating: 4,
-    },
-    {
-      id: 4,
-      name: "Javascript",
-      rating: 5,
     },
   ]);
 
@@ -165,7 +139,7 @@ export default function Main() {
     const options = {
       margin: 0.5,
       filename: "Curriculo.pdf",
-      image: { type: "jpeg", quality: 0.98 },
+      image: { type: "jpg", quality: 0.98 },
       html2canvas: { scale: 2 },
       jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
     };
@@ -196,8 +170,11 @@ export default function Main() {
                 Baixar Curriculo em PDF
               </S.BtnDownload>
             </S.ContentDownload>
-            <S.Name>THIAGO B. CALDERA</S.Name>
-            <S.Position>DESENVOLVEDOR FRONTEND</S.Position>
+            <S.Name>MAURO MENDONÇA</S.Name>
+            <S.Position>
+              Liderança | Vendas B2B | Gestão de Equipes | Planejamento
+              Estratégico | CRM | Business Plan
+            </S.Position>
             <img src={photoProfile} alt="" />
           </S.ImgProfile>
           <S.ContentContactMeAboutMe>
@@ -208,33 +185,32 @@ export default function Main() {
                 </S.CircleIcon>
                 <S.Title>CONTATO</S.Title>
               </S.ContentTitle>
-
-              <S.ItemContact>
-                <a href="https://whatsa.me/5568981087475/?t=Ol%C3%A1%20tudo%20bem!">
-                  <FaWhatsappSquare style={{ color: "#00a884" }} />
-                  {contact.phone}
-                </a>
-              </S.ItemContact>
-              <S.ItemContact>
-                <a
-                  href="https://www.linkedin.com/in/thiagobc2/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaLinkedin style={{ color: "#0a66c2" }} />
-                  {contact.linkedin}
-                </a>
-              </S.ItemContact>
-              <S.ItemContact>
-                <a
-                  href="https://github.com/thiagobc2"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaGithubSquare />
-                  {contact.github}
-                </a>
-              </S.ItemContact>
+              {contact.phone && (
+                <S.ItemContact>
+                  <a href="https://whatsa.me/5568981087475/?t=Ol%C3%A1%20tudo%20bem!">
+                    <FaWhatsappSquare style={{ color: "#00a884" }} />
+                    {contact.phone}
+                  </a>
+                </S.ItemContact>
+              )}
+              {contact.email && (
+                <S.ItemContact>
+                  <MdEmail style={{ color: "#0a66c2" }} />
+                  {contact.email}
+                </S.ItemContact>
+              )}
+              {contact.linkedin && (
+                <S.ItemContact>
+                  <a
+                    href="https://www.linkedin.com/in/mauromendonca2007/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaLinkedin style={{ color: "#0a66c2" }} />
+                    {contact.linkedin}
+                  </a>
+                </S.ItemContact>
+              )}
             </S.ContactMe>
 
             <S.Aboutme>
@@ -242,14 +218,18 @@ export default function Main() {
                 <S.CircleIcon>
                   <FaUserTie />
                 </S.CircleIcon>
-                <S.Title>SOBRE MIM</S.Title>
+                <S.Title>RESUMO PROFISSIONAL</S.Title>
               </S.ContentTitle>
               <S.Info>
-                Sou um entusiasta da tecnologia com vasta experiência com
-                front-end, tendo atuado em empresas de destaque como Bradesco,
-                Elofy, Synvia. Domino frameworks como React e Angular e, onde
-                quer que eu esteja, busco sempre deixar uma marca positiva,
-                agregando valor com dedicação e foco em resultados
+                Profissional com 25 anos de experiência em negócios B2B, com
+                forte atuação em empresas multinacionais nos segmentos de
+                refrigeração, eletrodomésticos, logística e automotivo.
+                Expertise na gestão de equipes comerciais, desenvolvimento de
+                mercados internacionais. Fluente em inglês e espanhol, com vasta
+                experiência em negociações globais, especialmente na América
+                Latina, Europa e Estados Unidos. Perfil estratégico, orientado a
+                resultados, com sólida vivência em planejamento e gestão de
+                vendas.
               </S.Info>
             </S.Aboutme>
           </S.ContentContactMeAboutMe>
@@ -260,7 +240,7 @@ export default function Main() {
             <S.CircleIcon>
               <FaBookReader />
             </S.CircleIcon>
-            <S.Title>EDUCAÇÃO</S.Title>
+            <S.Title>FORMAÇÃO ACADÊMICA</S.Title>
           </S.ContentTitle>
           {educations.map((education, index) => (
             <ItemEducation key={education.id} {...education} />
@@ -278,7 +258,7 @@ export default function Main() {
             <S.CircleIcon>
               <FaChartPie />
             </S.CircleIcon>
-            <S.Title>HABILIDADES</S.Title>
+            <S.Title>HABILIDADES TÉCNICAS</S.Title>
           </S.ContentTitle>
           <ListRating items={ecosystems} />
           <S.ContentTitle>
@@ -292,7 +272,7 @@ export default function Main() {
             <S.CircleIcon>
               <FaFlagCheckered />
             </S.CircleIcon>
-            <S.Title>HOBBIES</S.Title>
+            <S.Title>FAMÍLIA E INTERESSES PESSOAIS</S.Title>
           </S.ContentTitle>
           <ListMakers items={hobies} />
         </S.Section2>
